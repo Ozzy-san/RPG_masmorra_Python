@@ -1,7 +1,7 @@
 import random 
 import time
 
-# O Herói (Vida e Poções são mantidas entre as lutas!)
+# A estrela do game (Vida e Poções são mantidas entre as lutas!)
 hero = { "nickname": "Schwarzer", "vida": 100, "defesa": 10 }
 pocoes = 3 
 
@@ -39,7 +39,7 @@ for inimigo_atual in dungeon:
         escolha = input("O que fazer? ")
 
         if escolha == '1':
-            dano = random.randint(20, 30) # Aumentei um pouco seu dano
+            dano = random.randint(20, 30) 
             # Crítico
             if random.randint(1, 10) == 10:
                 dano *= 2
@@ -49,7 +49,7 @@ for inimigo_atual in dungeon:
 
         elif escolha == '2':
             if pocoes > 0:
-                hero['vida'] += 40 # Melhorei a poção
+                hero['vida'] += 40 
                 if hero['vida'] > 100: hero['vida'] = 100
                 pocoes -= 1
                 print(f"Glup! Vida recuperada. Restam {pocoes} poções.")
@@ -64,7 +64,7 @@ for inimigo_atual in dungeon:
             time.sleep(1)
             print("\nO inimigo ataca!")
             # O Chefe bate mais forte que os outros?
-            # Podemos fazer um sorteio genérico por enquanto
+            # Irei fazer um sorteio genérico por enquanto
             receber_dano(hero, random.randint(10, 25))
 
     # --- FIM DA BATALHA ATUAL ---
@@ -78,4 +78,5 @@ for inimigo_atual in dungeon:
 
 # --- FIM DA MASMORRA ---
 if hero['vida'] > 0:
+
     print("\nPARABÉNS! VOCÊ LIMPOU A MASMORRA E SAIU VIVO!")
